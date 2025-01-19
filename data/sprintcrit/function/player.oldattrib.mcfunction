@@ -4,6 +4,10 @@ scoreboard players operation @s WereFalling = @s Falling
 scoreboard players set @s Falling 0
 execute store result score YV Temp run data get entity @s Motion[1] 100
 execute unless data entity @s {OnGround:1b} if score YV Temp matches ..-5 run scoreboard players set @s Falling 1
-scoreboard players operation @s TotalDamageDealt = @s DamageDealt
-scoreboard players operation @s TotalDamageDealt += @s DamageDealtAbsorbed
-scoreboard players operation @s TotalDamageDealt += @s DamageDealtResisted
+scoreboard players set @s TotalDamageDealt 0
+execute store result score Base Temp run attribute @s generic.attack_damage get 100
+execute store result score Sharpness Temp run data get entity @s SelectedItem.components."minecraft:enchantments".levels."minecraft:sharpness" 50
+execute if score Sharpness Temp matches 1.. run scoreboard players add Sharpness Temp 50
+scoreboard players operation Base Temp += Sharpness Temp
+execute store result score Smite Temp run data get entity @s SelectedItem.components."minecraft:enchantments".levels."minecraft:smite" 250
+execute store result score Bane Temp run data get entity @s SelectedItem.components."minecraft:enchantments".levels."minecraft:bane_of_arthropods" 250
