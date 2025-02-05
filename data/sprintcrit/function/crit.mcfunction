@@ -15,7 +15,7 @@ scoreboard players operation BodyY Temp = FeetY Temp
 execute at @s run summon marker ~ ~ ~ {Tags:["Body","PositioningMarker"]}
 execute store result entity @e[type=marker,tag=Body,limit=1] Pos[1] double 0.01 run scoreboard players operation BodyY Temp += HalfBodyHeight Temp
 
-execute at @e[type=marker,limit=1,sort=nearest,tag=Body] run particle crit ~ ~0.05 ~ 0 0.4 0 0.5 15
+execute at @e[type=marker,limit=1,sort=nearest,tag=Body] run particle crit ~ ~0.05 ~ 0 0.4 0 0.6 30
 $execute at @s if entity @e[tag=attacker] run damage @s $(damage) player_attack by @e[tag=attacker,limit=1]
 $execute unless entity @e[tag=attacker] run damage @s $(damage) player_attack
 

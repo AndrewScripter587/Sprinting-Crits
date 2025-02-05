@@ -11,3 +11,4 @@ execute if score Sharpness Temp matches 1.. run scoreboard players add Sharpness
 scoreboard players operation Base Temp += Sharpness Temp
 execute store result score Smite Temp run data get entity @s SelectedItem.components."minecraft:enchantments".levels."minecraft:smite" 250
 execute store result score Bane Temp run data get entity @s SelectedItem.components."minecraft:enchantments".levels."minecraft:bane_of_arthropods" 250
+scoreboard players operation @s TotalDamageDealt = Base Temp
