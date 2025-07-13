@@ -12,3 +12,5 @@ READ ME: before making this issue, make sure you aren’t being an idiot by repo
   - Datapacks are server side, dummy. The server you’re trying to use it on doesn’t have it. The mod version does nothing on the client.
 - the crits act weird
   - This is just the nature of datapacks
+
+Now you can make your issue below
